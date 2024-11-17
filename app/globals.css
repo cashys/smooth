@@ -2,11 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles */
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 15, 15, 15;
-  --accent-color: 138, 43, 226;
+  --background-end-rgb: 0, 0, 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -18,16 +30,25 @@ body {
   );
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   cursor: url('/cursor-default.png'), auto;
 }
 
-.gritty-texture {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.05;
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 50;
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom cursor styles */
+* {
+  cursor: url('/cursor-default.png') 16 16, auto !important;
+}
+
+a, button, [role="button"],
+input[type="submit"], input[type="button"],
+select, [onclick], .clickable {
+  cursor: url('/cursor-grab.png') 16 16, pointer !important;
 }
 
 /* Screen edge blur overlays */
@@ -96,38 +117,33 @@ body {
   );
 }
 
-@keyframes fadeInUp {
-  0% {
+.gritty-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes floatDelayed {
-  0% {
-    transform: translateY(-20px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-20px);
   }
 }
 
@@ -136,53 +152,88 @@ body {
 }
 
 .animate-float-delayed {
-  animation: floatDelayed 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
 }
 
 /* Initial page load animations */
 .title {
   opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
   animation-delay: 0s;
 }
 
 .description {
   opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
   animation-delay: 0s;
 }
 
 .nav-button {
   opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
   animation-delay: 0s;
 }
 
 /* Blog post animations */
 .blog-header {
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 .blog-paragraph {
   opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Custom cursor styles */
-body {
-  cursor: url('/cursor-default.png'), auto;
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  * {
+    cursor: auto !important;
+  }
+
+  a, button, [role="button"],
+  input[type="submit"], input[type="button"],
+  select, [onclick], .clickable {
+    cursor: pointer !important;
+  }
+
+  .animate-float, .animate-float-delayed {
+    animation: none;
+  }
+
+  .bg-element-1, .bg-element-2 {
+    opacity: 0.4;
+  }
 }
 
-button, 
-a,
-Link,
-input[type="submit"],
-[role="button"],
-.clickable,
-.blog-post,
-*[onclick],
-*[class*="hover"],
-*[class*="active"] {
-  cursor: url('/cursor-grab.png'), pointer !important;
+/* Touch device optimizations */
+@media (hover: none) {
+  * {
+    cursor: auto !important;
+  }
+
+  a, button, [role="button"],
+  input[type="submit"], input[type="button"],
+  select, [onclick], .clickable {
+    cursor: pointer !important;
+  }
+}
+
+/* Prevent text selection on interactive elements */
+.nav-button, .blog-post {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Improve tap target sizes on mobile */
+@media (max-width: 640px) {
+  .nav-button, .blog-post {
+    min-height: 44px;
+    padding: 12px;
+  }
 }

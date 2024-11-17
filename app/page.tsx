@@ -59,39 +59,39 @@ export default function Home() {
   return (
     <main className="min-h-screen relative overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex min-h-screen flex-col items-center justify-center p-4 relative">
+      <section className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 relative">
         <div className="gritty-texture" />
         
-        <div className="text-center z-10">
-          <h1 className="title text-8xl font-bold mb-8 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-transparent bg-clip-text">
+        <div className="text-center z-10 max-w-full">
+          <h1 className="title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-8 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-transparent bg-clip-text px-4">
             smooth.
           </h1>
 
-          <p className="description text-2xl text-gray-400 mb-12 max-w-2xl">
+          <p className="description text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 max-w-xs sm:max-w-sm md:max-w-2xl mx-auto px-4">
             Experience the future of motion design with our cutting-edge animation framework.
           </p>
 
-          <div className="flex gap-6 justify-center mt-12">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8 sm:mt-12 px-4">
             <Link
               href="/message"
-              className="nav-button px-8 py-4 rounded-xl text-xl bg-violet-600 hover:bg-violet-700 transition-colors"
+              className="nav-button px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-lg sm:text-xl bg-violet-600 hover:bg-violet-700 transition-colors w-full sm:w-auto"
             >
               Get Started
             </Link>
             <Link
               href="/message"
-              className="nav-button px-8 py-4 rounded-xl text-xl border border-violet-600 hover:bg-violet-600/10 transition-colors"
+              className="nav-button px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-lg sm:text-xl border border-violet-600 hover:bg-violet-600/10 transition-colors w-full sm:w-auto"
             >
               Learn More
             </Link>
           </div>
         </div>
 
-        <div className="bg-element-1 absolute -z-10 w-[600px] h-[600px] bg-violet-600/20 rounded-full blur-3xl top-1/4 -right-48 animate-float" />
-        <div className="bg-element-2 absolute -z-10 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-3xl -bottom-24 -left-48 animate-float-delayed" />
+        <div className="bg-element-1 absolute -z-10 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-violet-600/20 rounded-full blur-3xl top-1/4 -right-48 animate-float opacity-60 sm:opacity-100" />
+        <div className="bg-element-2 absolute -z-10 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-indigo-600/20 rounded-full blur-3xl -bottom-24 -left-48 animate-float-delayed opacity-60 sm:opacity-100" />
 
         <div 
-          className="arrow-container absolute bottom-12 left-1/2 -translate-x-1/2"
+          className="arrow-container absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2"
           style={{ opacity: scrollOpacity }}
         >
           <svg
@@ -100,7 +100,7 @@ export default function Home() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-12 h-12 text-gray-500 animate-bounce"
+            className="w-8 h-8 sm:w-12 sm:h-12 text-gray-500 animate-bounce"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
@@ -108,32 +108,32 @@ export default function Home() {
       </section>
 
       {/* Blog Posts Section */}
-      <section className="px-4 py-24 max-w-7xl mx-auto">
-        <h2 className="text-6xl font-bold mb-16 text-center bg-gradient-to-r from-purple-500 to-violet-500 text-transparent bg-clip-text leading-relaxed pb-1">
+      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 max-w-7xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 sm:mb-16 text-center bg-gradient-to-r from-purple-500 to-violet-500 text-transparent bg-clip-text leading-relaxed pb-1">
           Latest Insights
         </h2>
         
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
             <Link 
               href={`/blog/${post.slug}`}
               key={index}
               className="blog-post cursor-pointer"
             >
-              <article className="relative overflow-hidden rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 p-8 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10">
-                <div className={`category text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r ${post.gradient} inline-block`}>
+              <article className="relative overflow-hidden rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 p-6 sm:p-8 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10">
+                <div className={`category text-xs sm:text-sm font-semibold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r ${post.gradient} inline-block`}>
                   {post.category}
                 </div>
                 
-                <h3 className="text-2xl font-bold mt-6 mb-4 hover:text-violet-400 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold mt-4 sm:mt-6 mb-2 sm:mb-4 hover:text-violet-400 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
                 
-                <p className="text-lg text-gray-400 mb-6 line-clamp-3">
+                <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6 line-clamp-3">
                   {post.excerpt}
                 </p>
                 
-                <div className="flex items-center justify-between text-base text-gray-500">
+                <div className="flex items-center justify-between text-sm sm:text-base text-gray-500">
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>

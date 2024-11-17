@@ -113,26 +113,26 @@ export default function BlogPost() {
         </svg>
       </Link>
 
-      <article className="max-w-5xl mx-auto px-8 py-32">
-        <header className="blog-header opacity-0 mb-20 text-center">
-          <div className={`inline-block text-lg font-semibold px-6 py-3 rounded-full bg-gradient-to-r ${post.gradient} mb-8`}>
+      <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-32">
+        <header className="blog-header opacity-0 mb-16 sm:mb-20 text-center">
+          <div className={`inline-block text-sm sm:text-lg font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r ${post.gradient} mb-6 sm:mb-8`}>
             {post.category}
           </div>
-          <h1 className="text-6xl font-bold mb-8 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-transparent bg-clip-text leading-relaxed pb-1">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-transparent bg-clip-text leading-relaxed pb-1 px-4">
             {post.title}
           </h1>
-          <div className="flex items-center justify-center gap-6 text-gray-400 text-xl">
+          <div className="flex items-center justify-center gap-4 sm:gap-6 text-gray-400 text-base sm:text-xl">
             <span>{post.date}</span>
             <span>•</span>
             <span>{post.readTime}</span>
           </div>
         </header>
 
-        <div className="prose prose-invert prose-violet prose-lg max-w-none">
+        <div className="prose prose-invert prose-violet prose-lg max-w-none px-4">
           {post.content.map((paragraph, index) => (
             <p 
               key={index}
-              className="blog-paragraph opacity-0 text-gray-300 leading-relaxed mb-8 text-xl animate-fade-in"
+              className="blog-paragraph opacity-0 text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 animate-fade-in"
             >
               {paragraph}
             </p>
