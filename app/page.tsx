@@ -109,8 +109,8 @@ export default function Home() {
 
       {/* Blog Posts Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 sm:mb-16 text-center bg-gradient-to-r from-purple-500 to-violet-500 text-transparent bg-clip-text leading-relaxed pb-1">
-          Latest Insights
+        <h2 className="text-4xl sm:text-5xl font-bold mb-12 leading-relaxed">
+          Our Latest Insights
         </h2>
         
         <div className="grid gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
@@ -125,7 +125,7 @@ export default function Home() {
                   {post.category}
                 </div>
                 
-                <h3 className="text-xl sm:text-2xl font-bold mt-4 sm:mt-6 mb-2 sm:mb-4 hover:text-violet-400 transition-colors line-clamp-2">
+                <h3 className="text-2xl sm:text-3xl font-semibold mb-4 leading-relaxed">
                   {post.title}
                 </h3>
                 

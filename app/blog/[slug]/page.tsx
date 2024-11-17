@@ -92,10 +92,10 @@ export default function BlogPost() {
       {/* Home button */}
       <Link 
         href="/"
-        className="fixed top-8 left-8 z-50 transition-all duration-300 group"
+        className="fixed top-8 left-8 z-50 transition-all duration-300 group p-4 -m-4"
       >
         <svg 
-          className="w-8 h-8 text-gray-400 group-hover:text-violet-400 transition-all duration-300
+          className="w-10 h-10 text-gray-400 group-hover:text-violet-400 transition-all duration-300
                    group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)]" 
           fill="none" 
           stroke="currentColor"

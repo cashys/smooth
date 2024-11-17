@@ -49,10 +49,10 @@ export default function Message() {
       {/* Home button */}
       <Link 
         href="/"
-        className="fixed top-8 left-8 z-50 transition-all duration-300 group"
+        className="fixed top-8 left-8 z-50 transition-all duration-300 group p-4 -m-4"
       >
         <svg 
-          className="w-8 h-8 text-gray-400 group-hover:text-violet-400 transition-all duration-300
+          className="w-10 h-10 text-gray-400 group-hover:text-violet-400 transition-all duration-300
                    group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)]" 
           fill="none" 
           stroke="currentColor"
@@ -78,7 +78,7 @@ export default function Message() {
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-400">- Cash</p>
         </div>
         
-        <div className="counter opacity-0 fixed bottom-8 sm:bottom-12 text-gray-500 text-base sm:text-xl">
+        <div className="counter opacity-0 fixed bottom-0 left-0 right-0 text-center p-6 text-gray-400 text-sm">
           Redirecting you back to the landing page in {countdown} seconds...
         </div>
       </div>
