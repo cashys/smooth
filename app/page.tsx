@@ -7,7 +7,7 @@ const blogPosts = [
   {
     title: "The Evolution of Animation in Web Design",
     excerpt: "From basic transitions to complex motion design, explore how web animations have transformed the digital landscape.",
-    date: "Nov 17, 2023",
+    date: "Nov 17, 2024",
     readTime: "5 min read",
     category: "Design",
     gradient: "from-pink-500 to-violet-500",
@@ -16,7 +16,7 @@ const blogPosts = [
   {
     title: "Building Performant Animations",
     excerpt: "Learn how to create smooth, efficient animations that don't compromise your website's performance.",
-    date: "Nov 15, 2023",
+    date: "Nov 15, 2024",
     readTime: "7 min read",
     category: "Performance",
     gradient: "from-blue-500 to-cyan-500",
@@ -25,7 +25,7 @@ const blogPosts = [
   {
     title: "The Psychology of Motion Design",
     excerpt: "Understanding how motion affects user perception and engagement in digital interfaces.",
-    date: "Nov 12, 2023",
+    date: "Nov 12, 2024",
     readTime: "6 min read",
     category: "UX Design",
     gradient: "from-green-500 to-teal-500",
