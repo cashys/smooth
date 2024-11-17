@@ -63,24 +63,24 @@ export default function Home() {
         <div className="gritty-texture" />
         
         <div className="text-center z-10">
-          <h1 className="title text-7xl font-bold mb-6 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-transparent bg-clip-text">
+          <h1 className="title text-8xl font-bold mb-8 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-transparent bg-clip-text">
             smooth.
           </h1>
 
-          <p className="description text-xl text-gray-400 mb-8 max-w-md">
+          <p className="description text-2xl text-gray-400 mb-12 max-w-2xl">
             Experience the future of motion design with our cutting-edge animation framework.
           </p>
 
-          <div className="flex gap-4 justify-center mt-8">
+          <div className="flex gap-6 justify-center mt-12">
             <Link
               href="/message"
-              className="nav-button px-6 py-3 rounded-lg bg-violet-600 hover:bg-violet-700 transition-colors"
+              className="nav-button px-8 py-4 rounded-xl text-xl bg-violet-600 hover:bg-violet-700 transition-colors"
             >
               Get Started
             </Link>
             <Link
               href="/message"
-              className="nav-button px-6 py-3 rounded-lg border border-violet-600 hover:bg-violet-600/10 transition-colors"
+              className="nav-button px-8 py-4 rounded-xl text-xl border border-violet-600 hover:bg-violet-600/10 transition-colors"
             >
               Learn More
             </Link>
@@ -107,31 +107,31 @@ export default function Home() {
 
       {/* Blog Posts Section */}
       <section className="px-4 py-24 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-purple-500 to-violet-500 text-transparent bg-clip-text leading-relaxed pb-1">
+        <h2 className="text-6xl font-bold mb-16 text-center bg-gradient-to-r from-purple-500 to-violet-500 text-transparent bg-clip-text leading-relaxed pb-1">
           Latest Insights
         </h2>
         
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
             <Link 
               href={`/blog/${post.slug}`}
               key={index}
               className="blog-post cursor-pointer"
             >
-              <article className="relative overflow-hidden rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 p-6 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10">
-                <div className={`category text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${post.gradient} inline-block`}>
+              <article className="relative overflow-hidden rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 p-8 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10">
+                <div className={`category text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r ${post.gradient} inline-block`}>
                   {post.category}
                 </div>
                 
-                <h3 className="text-xl font-bold mt-4 mb-2 hover:text-violet-400 transition-colors">
+                <h3 className="text-2xl font-bold mt-6 mb-4 hover:text-violet-400 transition-colors">
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-400 mb-4 line-clamp-3">
+                <p className="text-lg text-gray-400 mb-6 line-clamp-3">
                   {post.excerpt}
                 </p>
                 
-                <div className="flex items-center justify-between text-sm text-gray-500">
+                <div className="flex items-center justify-between text-base text-gray-500">
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>

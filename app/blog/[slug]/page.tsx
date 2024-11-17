@@ -101,26 +101,26 @@ export default function BlogPost() {
         </svg>
       </Link>
 
-      <article className="max-w-4xl mx-auto px-4 py-24">
-        <header className="blog-header opacity-0 mb-16 text-center">
-          <div className={`inline-block text-sm font-semibold px-4 py-2 rounded-full bg-gradient-to-r ${post.gradient} mb-6`}>
+      <article className="max-w-5xl mx-auto px-8 py-32">
+        <header className="blog-header opacity-0 mb-20 text-center">
+          <div className={`inline-block text-lg font-semibold px-6 py-3 rounded-full bg-gradient-to-r ${post.gradient} mb-8`}>
             {post.category}
           </div>
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-transparent bg-clip-text leading-relaxed pb-1">
+          <h1 className="text-6xl font-bold mb-8 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 text-transparent bg-clip-text leading-relaxed pb-1">
             {post.title}
           </h1>
-          <div className="flex items-center justify-center gap-4 text-gray-400">
+          <div className="flex items-center justify-center gap-6 text-gray-400 text-xl">
             <span>{post.date}</span>
             <span>•</span>
             <span>{post.readTime}</span>
           </div>
         </header>
 
-        <div className="prose prose-invert prose-violet max-w-none">
+        <div className="prose prose-invert prose-violet prose-lg max-w-none">
           {post.content.map((paragraph, index) => (
             <p 
               key={index}
-              className="blog-paragraph opacity-0 text-gray-300 leading-relaxed mb-6 text-lg animate-fade-in"
+              className="blog-paragraph opacity-0 text-gray-300 leading-relaxed mb-8 text-xl animate-fade-in"
             >
               {paragraph}
             </p>

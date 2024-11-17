@@ -67,15 +67,15 @@ export default function Message() {
         </svg>
       </Link>
 
-      <div className="flex flex-col items-center justify-center min-h-screen p-4">
-        <div className="message opacity-0 text-center max-w-2xl">
-          <p className="text-2xl text-gray-300 mb-8">
+      <div className="flex flex-col items-center justify-center min-h-screen p-8">
+        <div className="message opacity-0 text-center max-w-3xl">
+          <p className="text-3xl text-gray-300 mb-12">
             I didn&apos;t know what to do with that button, but the landing page looked kind of weird without it.
           </p>
-          <p className="text-xl text-gray-400">- Cash</p>
+          <p className="text-2xl text-gray-400">- Cash</p>
         </div>
         
-        <div className="counter opacity-0 fixed bottom-8 text-gray-500">
+        <div className="counter opacity-0 fixed bottom-12 text-gray-500 text-xl">
           Redirecting you back to the landing page in {countdown} seconds...
         </div>
       </div>
