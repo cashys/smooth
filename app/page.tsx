@@ -87,18 +87,20 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-element-1 absolute -z-10 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl top-1/4 -right-48 animate-float" />
-        <div className="bg-element-2 absolute -z-10 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl -bottom-24 -left-48 animate-float-delayed" />
+        <div className="bg-element-1 absolute -z-10 w-[600px] h-[600px] bg-violet-600/20 rounded-full blur-3xl top-1/4 -right-48 animate-float" />
+        <div className="bg-element-2 absolute -z-10 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-3xl -bottom-24 -left-48 animate-float-delayed" />
 
         <div 
-          className="scroll-text absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-500"
+          className="arrow-container absolute bottom-12 left-1/2 -translate-x-1/2"
           style={{ opacity: scrollOpacity }}
         >
           <svg
-            className="w-6 h-6 animate-bounce"
+            xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            stroke="currentColor"
             viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-12 h-12 text-gray-500 animate-bounce"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
@@ -106,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* Blog Posts Section */}
-      <section className="px-4 py-24 max-w-6xl mx-auto">
+      <section className="px-4 py-24 max-w-7xl mx-auto">
         <h2 className="text-6xl font-bold mb-16 text-center bg-gradient-to-r from-purple-500 to-violet-500 text-transparent bg-clip-text leading-relaxed pb-1">
           Latest Insights
         </h2>
