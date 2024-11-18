@@ -109,8 +109,8 @@ export default function Home() {
 
       {/* Blog Posts Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold mb-12 leading-relaxed">
-          Our Latest Insights
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 sm:mb-16 text-center bg-gradient-to-r from-purple-500 to-violet-500 text-transparent bg-clip-text leading-relaxed pb-1">
+          Latest Insights
         </h2>
         
         <div className="grid gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
@@ -118,14 +118,14 @@ export default function Home() {
             <Link 
               href={`/blog/${post.slug}`}
               key={index}
-              className="blog-post cursor-pointer"
+              className="block"
             >
               <article className="relative overflow-hidden rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 p-6 sm:p-8 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10">
                 <div className={`category text-xs sm:text-sm font-semibold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r ${post.gradient} inline-block`}>
                   {post.category}
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl font-semibold mb-4 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold mt-4 sm:mt-6 mb-2 sm:mb-4 hover:text-violet-400 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
                 
